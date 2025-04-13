@@ -26,3 +26,30 @@ termux-setup-storage
 ```
 pkg update && pkg upgrade
 ```
+> Step 2: Install proot-distro
+1 Install proot-distro:
+```
+pkg install proot-distro
+```
+2 List Available Distros:
+```
+proot-distro list
+```
+- Look for ubuntu (e.g., ubuntu or ubuntu-24.04). Ubuntu is best for Solana due to package support.
+
+> Step 3: Install Ubuntu
+1. Install Ubuntu:
+```
+proot-distro install ubuntu
+```
+- Downloads a minimal Ubuntu rootfs (usually 22.04 or 24.04, ~200-500MB).
+- If it fails (e.g., network error), retry or check storage:
+2. Log In to Ubuntu:
+```
+proot-distro login ubuntu
+```
+- Prompt changes to root@localhost:~#, indicating you’re in Ubuntu.
+- If login fails, try:
+```
+proot-distro login ubuntu --fix-low-ports
+```
