@@ -69,3 +69,11 @@ apt-get install -y curl git
 uname -m
 ```
 - Expect: aarch64. Confirms your environment matches Solana’s build target.
+
+# Part 2: Install Solana CLI and solana-keygen (Agave)
+We’ll build solana and solana-keygen from Agave v2.2.6 source, as no aarch64 binaries exist.
+> Step 5: Install Build Dependencies
+Install packages needed for Rust and Agave:
+```
+apt-get install -y build-essential clang pkg-config libssl-dev zlib1g-dev protobuf-compiler libprotobuf-dev cmake
+```
