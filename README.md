@@ -228,9 +228,15 @@ bitz collect --cores 2
 - Kill screen: screen -XS bitzminer quit
 I used 2 cores here (will adjsut appropriately according to my SPEC)
 
-Claim Mined tokens
-- bitz claim
-Check Wallet status
-- bitz account
+1. Claim Mined tokens:
+```
+bitz claim
+```
+2. Check Wallet status:
+```
+bitz account
+```
+
+# DONE ✅
 
  
