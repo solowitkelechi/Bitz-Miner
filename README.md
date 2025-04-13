@@ -94,9 +94,9 @@ apt-get install --reinstall libssl-dev protobuf-compiler libprotobuf-dev cmake
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 - Choose default (option 1).
-- Activate:source 
+- Activate:
 ```
-$HOME/.cargo/env
+source $HOME/.cargo/env
 ```
 - Update:
 ```
@@ -107,3 +107,32 @@ rustup update
 rustc --version
 ```
 Expect: rustc 1.80.1 or newer.
+
+> Step 7: Clone Agave Source
+```
+git clone https://github.com/anza-xyz/agave.git
+cd agave
+git checkout v2.1.18
+```
+- Verify tag:
+```
+git status
+```
+
+> Step 8: Clean Build Environment
+```
+cargo clean
+rm -rf target
+```
+
+> Step 9: Configure Environment
+Set variables to avoid errors and optimize for Android:
+```
+export OPENSSL_NO_VENDOR=1
+export OPENSSL_LIB_DIR=/usr/lib/aarch64-linux-gnu
+export OPENSSL_INCLUDE_DIR=/usr/include
+export PKG_CONFIG_PATH=/usr/lib/aarch64-linux-gnu/pkgconfig
+export PROTOC=/usr/bin/protoc
+export PROTOC_INCLUDE=/usr/include
+export MAKEFLAGS="-j1"
+```
