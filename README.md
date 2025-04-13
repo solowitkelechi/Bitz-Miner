@@ -188,3 +188,49 @@ solana airdrop 1
 solana balance
 ```
 - Expect: 1 SOL.
+
+> Step 15: connect CLI to Eclipse mainnet
+This connects CLI to the Eclipse mainnet.
+```
+solana config set --url https://mainnetbeta-rpc.eclipse.xyz/
+```
+
+> Step 15:Exporting PrivateKey from ID.json
+```
+cat ~/.config/solana/id.json
+```
+- Copy the output (a list of numbers) and import it into Backpack Wallet under “Private Key”.
+- Fund the wallet with 0.005+ ETH on Eclipse to activate mining. 
+
+# Part 3: Install Bitz CLI
+This compiles and installs the Bitz miner directly from source.
+```
+cargo install bitz
+```
+
+Start Mining Bitz by opening Screen
+```
+screen -S bitzminer
+```
+Start Miner
+```
+bitz collect
+```
+Using Multiple core
+```
+bitz collect --cores 2
+```
+> To keep it running in the background:
+- Detach screen: Ctrl + A + D
+- Reattach screen: ```screen -r bitzminer``
+- List screens: screen -ls
+- Stop miner: Ctrl + C inside screen
+- Kill screen: screen -XS bitzminer quit
+I used 2 cores here (will adjsut appropriately according to my SPEC)
+
+Claim Mined tokens
+- bitz claim
+Check Wallet status
+- bitz account
+
+ 
