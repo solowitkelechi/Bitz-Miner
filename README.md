@@ -136,3 +136,55 @@ export PROTOC=/usr/bin/protoc
 export PROTOC_INCLUDE=/usr/include
 export MAKEFLAGS="-j1"
 ```
+
+Step 10: Build Solana CLI and solana-keygen
+Build both binaries:
+```
+cargo build --release --bin solana
+cargo build --release --bin solana-keygen
+```
+- Takes ~15-30 minutes total.
+- If errors occur:
+```
+RUST_BACKTRACE=full cargo build --release --bin solana
+```
+
+> Step 11: Install Binaries
+```
+mkdir -p ~/bin
+cp target/release/solana ~/bin/
+cp target/release/solana-keygen ~/bin/
+chmod +x ~/bin/solana ~/bin/solana-keygen
+```
+
+> Step 12: Update PATH
+```
+export PATH=$HOME/bin:$PATH
+echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+Step 13: Verify Installation
+```
+solana --version
+solana-keygen --version
+```
+- Expect: solana-cli 2.1.18 and solana-keygen 2.1.18.
+
+> Step 14: Configure and Test
+1. Set Devnet:
+```
+solana config set --url https://api.devnet.solana.com
+solana config get
+```
+2. Create Wallet:
+```
+solana-keygen new
+```
+- Save seed phrase securely.
+3. Test Airdrop:
+```
+solana airdrop 1
+solana balance
+```
+- Expect: 1 SOL.
