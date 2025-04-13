@@ -71,9 +71,39 @@ uname -m
 - Expect: aarch64. Confirms your environment matches Solana’s build target.
 
 # Part 2: Install Solana CLI and solana-keygen (Agave)
-We’ll build solana and solana-keygen from Agave v2.2.6 source, as no aarch64 binaries exist.
+We’ll build solana and solana-keygen from Agave v2.1.18 source, as no aarch64 binaries exist.
 > Step 5: Install Build Dependencies
 Install packages needed for Rust and Agave:
 ```
 apt-get install -y build-essential clang pkg-config libssl-dev zlib1g-dev protobuf-compiler libprotobuf-dev cmake
 ```
+Verify:
+```
+pkg-config --modversion libssl
+protoc --version
+cmake --version
+```
+- Expect: 3.0.x (OpenSSL), 3.x.x (protoc), 3.x.x (cmake).
+- If missing:
+```
+apt-get install --reinstall libssl-dev protobuf-compiler libprotobuf-dev cmake
+```
+
+> Step 6: Install Rust
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+- Choose default (option 1).
+- Activate:source 
+```
+$HOME/.cargo/env
+```
+- Update:
+```
+rustup update
+```
+- Verify:
+```
+rustc --version
+```
+Expect: rustc 1.80.1 or newer.
