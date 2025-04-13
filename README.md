@@ -10,28 +10,28 @@ Step-by-Step Instructions to Install Linux (Ubuntu) on Android Using proot-distr
 # Part 1: Install Ubuntu via proot-distro on Android 
 > Step 1: Install Termux
 
-1 Download Termux:
+1. Download Termux:
 - Get from F-Droid (preferred, up-to-date): https://f-droid.org/packages/com.termux/
 - Avoid Google Play version (outdated).
 Install and open Termux.
 
-2 Grant Permissions:
+2. Grant Permissions:
 - Run:
 ```
 termux-setup-storage
 ```
 - Allow storage access when prompted.
 
-3 Update Termux:
+3. Update Termux:
 ```
 pkg update && pkg upgrade
 ```
 > Step 2: Install proot-distro
-1 Install proot-distro:
+1. Install proot-distro:
 ```
 pkg install proot-distro
 ```
-2 List Available Distros:
+2. List Available Distros:
 ```
 proot-distro list
 ```
@@ -53,3 +53,19 @@ proot-distro login ubuntu
 ```
 proot-distro login ubuntu --fix-low-ports
 ```
+
+> Step 4: Set Up Ubuntu Environment
+1. Update Packages:
+```
+apt-get update
+apt-get upgrade -y
+```
+2. Install Basic Tools:
+```
+apt-get install -y curl git
+```
+3. Verify Architecture:
+```
+uname -m
+```
+- Expect: aarch64. Confirms your environment matches Solana’s build target.
