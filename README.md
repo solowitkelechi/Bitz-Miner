@@ -16,8 +16,13 @@ Step-by-Step Instructions to Install Linux (Ubuntu) on Android Using proot-distr
 Install and open Termux.
 
 2 Grant Permissions:
-- Run:```termux-setup-storage```
+- Run:
+```
+termux-setup-storage
+```
 - Allow storage access when prompted.
 
 3 Update Termux:
-```pkg update && pkg upgrade```
+```
+pkg update && pkg upgrade
+```
