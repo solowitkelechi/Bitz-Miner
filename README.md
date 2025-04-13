@@ -190,12 +190,11 @@ solana balance
 - Expect: 1 SOL.
 
 > Step 15: connect CLI to Eclipse mainnet
-This connects CLI to the Eclipse mainnet.
 ```
 solana config set --url https://mainnetbeta-rpc.eclipse.xyz/
 ```
 
-> Step 15:Exporting PrivateKey from ID.json
+> Step 16:Exporting PrivateKey from ID.json
 ```
 cat ~/.config/solana/id.json
 ```
