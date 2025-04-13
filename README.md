@@ -6,7 +6,6 @@ Step-by-Step Instructions to Install Linux (Ubuntu) on Android Using proot-distr
 - [Termux: The terminal emulator hosting proot-distro. Download on Playstore] 
 - [Internet: Stable Wi-Fi/mobile data for downloads.] 
 - [Storage Access: Ensure Termux has storage permissions (Settings > Apps > Termux > Permissions > Storage).]
-~~~~
 
 # Part 1: Install Ubuntu via proot-distro on Android 
 > Step 1: Install Termux
