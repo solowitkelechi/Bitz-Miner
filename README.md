@@ -164,7 +164,7 @@ echo 'export PATH="$HOME/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Step 13: Verify Installation
+> Step 13: Verify Installation
 ```
 solana --version
 solana-keygen --version
